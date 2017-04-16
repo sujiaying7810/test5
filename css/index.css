@@ -1,0 +1,48 @@
+#header{
+    background: url("../img/banner.jpg");
+    height: 600px;
+}
+
+#product{
+    height: 2000px;
+}
+.info{
+    width: 440px;
+    height: 500px;
+    float: left;
+    border: 1px solid #ccc;
+    margin-top: 30px;
+    margin-right: 30px;
+}
+.info img{
+    width:248px;
+    height: 248px;
+    border: 1px solid #ccc;
+}
+
+.info .new{
+    background: #fa558f;
+    color: #fff;
+    float: right;
+}
+.detail{
+    margin-left: 10px;
+}
+.detail h3{
+    margin-top: 20px;
+}
+.add{
+    width: 150px;
+    height: 50px;
+    background: orange;
+    color: #fff;
+    border: 0;
+    margin-top: 5px;
+    font-size: 20px;
+}
+.detail input{
+    width: 150px;
+    height: 30px;
+    text-indent: 10px;
+    outline: none;
+}
