@@ -1,0 +1,73 @@
+#registration{
+    display: block;
+    /*height: 680px;*/
+    width: 500px;
+    float: left;
+}
+.reg{
+    display:block;
+    margin-left: 180px;
+}
+.reg h1{
+    margin-top: 50px;
+}
+.reg input{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 350px;
+    height: 30px;
+    text-indent: 10px;
+    outline: none;
+}
+.reg p{
+    color: #999999;
+    margin-top: 20px;
+}
+.reg a:hover{
+    text-decoration: underline;
+    color: red;
+}
+.button{
+    width: 500px;
+    height: 50px;
+    color: white;
+    background: #ef8743;
+    margin-top: 20px;
+   font-size: 20px;
+    border-radius: 10px;
+
+
+}
+.button:hover{
+    color: black;
+    background: white;
+    border-color: black;
+}
+#promise{
+    display: block;
+    float: right;
+    width: 500px;
+   padding: 150px;
+    margin-top: -50px;
+    /*height: 200px;*/
+
+}
+
+
+.pro h2{
+    color: #ef8743;
+
+}
+.pro p{
+    /*color: red;*/
+    margin-top: 40px;
+}
+.pro h4{
+    color: #999999;
+    font-weight: 100;
+    /*（font-weight什么意思，如何设置行间距）*/
+
+}
+#footer{
+    margin-top: 600px;
+}

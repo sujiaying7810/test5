@@ -1,0 +1,68 @@
+
+#special .wrapper{
+    height: 260px;
+    width: 1200px;
+
+}
+.wrapper img{
+    width: 116px;
+    height: 99px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+#special h1{
+    color: #fa558f;
+    margin-top: 20px;
+}
+/*product开始*/
+#product{
+    height: 1000px;
+}
+.info{
+    width: 340px;
+    height: 440px;
+    float: left;
+    border: 1px solid #ccc;
+    margin-top: 30px;
+    margin-right: 30px;
+}
+.info img{
+    width:248px;
+    height: 248px;
+    border: 1px solid #ccc;
+    vertical-align: bottom;
+}
+
+.info .new{
+    background: #fa558f;
+    color: #fff;
+    float: right;
+}
+.detail{
+    /*margin-left: 10px;*/
+    background: #5d5959;
+    width: 340px;
+    height: 202px;
+}
+.detail h3{
+    /*/!*margin-top: -4px;*!/  与上面bottom解决问题相同*/
+}
+.add{
+    width: 150px;
+    height: 50px;
+    background: orange;
+    color: #fff;
+    border: 0;
+    margin-top: 5px;
+    font-size: 20px;
+}
+.detail input{
+    width: 150px;
+    height: 30px;
+    text-indent: 10px;
+    outline: none;
+}
+/*product结束*/
+#footer {
+    margin-top: 20px;
+}

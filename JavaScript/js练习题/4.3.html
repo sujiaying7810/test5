@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+//    编写程序，计算10!(即 1*2*3＊·…10）的结果(10的阶乘)。
+    (  function(){
+        function getall(all){
+            var n ;
+            var sum=1;
+            for(n=1;n<=all;n++)
+            sum=n*sum;
+            return sum;
+       }
+        var s;
+        s=getall(10);
+        document.write("all="+s);
+
+
+    })();
+</script>
+</body>
+</html>

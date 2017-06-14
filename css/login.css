@@ -1,0 +1,77 @@
+
+#logins{
+    /*height: 400px;*/
+}
+#logins form{
+    width: 570px;
+    height: 490px;
+    float: left;
+
+}
+#logins h2{
+    margin-top: 20px;
+}
+#logins h5{
+    color: #5d5959;
+    font-size: 20px;
+}
+#logins  lable  input{
+    width: 400px;
+    height: 38px;
+   outline: none;
+    text-indent: 10px;
+    font-size: 20px;
+    display: block;
+}
+#logins lable{
+    display: block;
+    margin-top: 20px;
+}
+#logins  input[value="login"]{
+    width:144px;
+    height: 41px;
+    background: #ef8743; ;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+
+
+}
+#logins input[value="login"]:hover{
+    background: #ffffff;
+    color: #000000;
+}
+#forget{
+    color: #5d5959;
+    text-decoration: underline;
+    margin-top: 20px;
+    display: block;
+}
+#register{
+
+    width: 550px;
+    /*float: right;*/
+
+}
+#register h3{
+    color: #ef8743;
+}
+#register p{
+    color: #999999;
+    margin: 20px 0;
+}
+#register .button{
+    width: 106px;
+    height: 42px;
+    background: #ffffff;
+    border: 1px solid #000000;
+}
+#register .button:hover{
+    background: #ef8743;
+    color: #ffffff;
+    border-color: #ef8743;
+}
+#footer{
+    margin-top: 220px;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    (function(){
+        function  getall (all){
+            var n;
+            var sum=1;
+            for(n=1;n<=all;n++)
+            sum=n*sum;
+            return sum;
+        }
+//        var s;
+//        s=getall(1);
+//        var a;
+//        a=getall(2);
+//        var c;
+//        c=s+a;
+//        document.write("all="+s);
+//        document.write("all="+a);
+//        document.write("sum="+c);
+        var b;
+        b=getall(all);
+        for(b=1;b<=all;b++)
+        sum=b+sum;
+        document.write("all="+sum);
+    })();
+</script>
+</body>
+</html>

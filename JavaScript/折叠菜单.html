@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+            width: 200px;
+            height: 25px;
+            text-align: center;
+            line-height: 25px;
+        }
+        #container{
+            width: 200px;
+            /*height: 200px;*/
+            border: 1px solid;
+        }
+        .fir{
+            background: #000000;
+            color: #ffffff;
+        }
+        .fir:hover{
+            cursor: pointer;
+        }
+        .fir~li:hover{
+            background: #888888;
+        }
+
+    </style>
+</head>
+<body>
+<div id ="container">
+    <div id = "guanli">
+        <ul>    <li class="fir">管理区</li>
+                <li>001</li>
+                <li>002</li>
+                <li>003</li>
+            </ul>
+    </div>
+    <div id = "jiaoliu">
+        <ul>
+            <li class="fir">交流区</li>
+            <li>001</li>
+            <li>002</li>
+            <li>003</li>
+        </ul>
+    </div>
+</div>
+<script>
+       var oContainer=document.getElementById("container");
+       var aDiv =oContainer.getElementsByTagName("div");
+       var aLi=oContainer.getElementsByClassName("fir");
+       var aLi=oContainer.getElementsByTagName("li");
+       for(var i=0;i<aLi.length;i++){
+           aLi[i].index=i;
+           aLi[i].bFlag=false;
+           aLi[i].onclick=function(){
+                   if(this.bFlag){
+                       aLi[this.index].style.display = "block";
+                        bFlag = false;
+                   }else{
+                       aLi[this.index].style.display = "none";
+                        bFlag = true;
+                   }
+               this.bFlag = !this.bFlag;
+           };
+
+       }
+
+</script>
+</body>
+</html>

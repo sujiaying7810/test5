@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+          margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        img{
+            border: 0;
+        }
+        #container{
+            position: relative;
+            width: 520px;
+            height: 280px;
+            margin:100px  auto;
+        }
+        #pic img{
+            display:none;
+        }
+        #pic .selected{
+            display: block;
+        }
+        #num li, #arrows div{
+            height:20px ;
+            width:20px ;
+            background: #000000;
+            color: #ffffff;
+            text-align: center;
+            line-height: 20px;
+            float: left;
+            margin-right: 5px;
+            cursor: pointer;
+
+        }
+        #num .selected{
+            background: #fa558f;
+        }
+        #num{
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+        #arrows{
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="pic">
+    <img src="../img/1.jpg" alt=""class="selected">
+    <img src="../img/2.jpg" alt="">
+    <img src="../img/3.jpg" alt="">
+    <img src="../img/4.jpg" alt="">
+    </div>
+    <ul id="num">
+        <li class="selected">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+   <div id="arrows">
+       <div id="left">&lt;</div>
+       <div id="right">&gt;</div>
+   </div>
+</div>
+<script>
+     var oContainer =document.getElementById("container");
+     var oLeft= document.getElementById("left");
+     var oRight= document.getElementById("right");
+     var oPic=document.getElementById("pic");
+     var aImg=oPic.getElementsByTagName("img");
+     var oNum=document.getElementById("num");
+     var aLi=oNum.getElementsByTagName("li");
+     var nowIndex=0;
+     var timer;
+     for(var i=0;i<aLi.length;i++){
+         aLi[i].index=i;
+         aLi[i].onmouseover=function(){
+            for(var i=0;i<aLi.length;i++){
+                aLi[i].className="";
+                aImg[i].className="";
+            }
+            this.className="selected";
+            aImg[this.index].className="selected";
+            nowIndex=this.index;
+        };
+    }
+
+         oLeft.onclick = oRight.onclick = function () {
+             if (this == oLeft) {
+                 nowIndex--;
+                 if (nowIndex == -1) {
+                     nowIndex = aLi.length - 1;
+                 }
+             }
+             else {
+                 nowIndex++;
+                 if (nowIndex == aLi.length) {
+                     nowIndex = 0;
+                 }
+             }
+         changeImg();
+         };
+
+    oContainer.onmouseover= function () {
+      clearInterval(timer);
+    };
+    oContainer.onmouseout=function(){
+           play();
+        };
+     play();
+     function play(){
+         timer = setInterval(function(){
+             oRight.onclick();
+         }, 1000);
+     }
+     function changeImg(){
+         for(var i=0; i<aLi.length; i++){
+             aLi[i].className = "";
+             aImg[i].className = "";
+         }
+         aLi[nowIndex].className = "selected";
+         aImg[nowIndex].className = "selected";
+     }
+
+</script>
+</body>
+</html>

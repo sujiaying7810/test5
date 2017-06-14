@@ -1,14 +1,144 @@
-#header{
-    background: url("../img/banner.jpg");
-    height: 600px;
-}
+/*header开始*/
+/*#header{*/
+    /*background: url("../img/banner.jpg") no-repeat center;*/
+    /*height: 600px;*/
+/*}*/
+/*#login a:hover{*/
+    /*text-decoration: underline;*/
+/*}*/
+/*#login, #header h1{*/
+    /*color: #ffffff;*/
+    /*width: 380px;*/
+/*}*/
+/*#login a{*/
+    /*color: #ffffff;*/
+/*}*/
+/*#main-header #cart{*/
+    /*width: 280px;*/
+    /*height: 50px;*/
+    /*background: #000 url(../img/cart.png) 230px center no-repeat;*/
+    /*opacity: .5;/!* 取值范围0~1 *!/*/
+    /*filter: alpha(opacity=50);/!* ie下  取值范围0~100 *!/*/
+    /*color: #fff;*/
+    /*text-align: center;*/
+    /*/!*padding: 10px 20px;*!/*/
+    /*cursor: pointer;*/
+    /*margin-top: 25px;*/
+    /*line-height: 50px;*/
+    /*float: right;*/
+/*}*/
 
+/*#header img{*/
+    /*vertical-align: middle;*/
+/*}*/
+/*#header .float{*/
+    /*float: left;*/
+/*}*/
+/*#header h1.float{*/
+    /*text-align: center;*/
+    /*margin-left: 320px;*/
+
+/*}*/
+/*#main-header{*/
+    /*height: 100px;*/
+/*}*/
+/*#main-header{*/
+    /*line-height: 100px;*/
+    /*position: relative;*/
+/*}*/
+/*#nav >li{*/
+    /*width: 190px;*/
+    /*height: 40px;*/
+    /*background: #fa558f;*/
+    /*float: left;*/
+    /*text-align: center;*/
+    /*line-height: 40px;*/
+/*}*/
+/*#nav li:hover{*/
+    /*background: #3c3b3b;*/
+/*}*/
+/*#submenu .menu-part{*/
+    /*float:left;*/
+    /*margin-right: 50px;*/
+
+    /*text-align: left;*/
+
+/*}*/
+
+/*#nav #submenu li a{*/
+    /*color: #000;*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+
+/*}*/
+/*#nav #submenu li a:hover{*/
+    /*color: red;*/
+    /*text-decoration: underline;*/
+/*}*/
+/*#submenu .wrapper{*/
+    /*padding-left: 20px ;*/
+/*}*/
+/*#nav .selected{*/
+    /*background: #3c3b3b;*/
+/*}*/
+/*#submenu{*/
+    /*width: 1140px;*/
+    /*height: 300px;*/
+    /*background: #ffffff;*/
+    /*margin-left: -190px;*/
+    /*display: none;*/
+    /*position: relative;*/
+    /*z-index: 1;*/
+/*}*/
+/*#makeup:hover #submenu{*/
+    /*display: block;*/
+/*}*/
+
+/*#main-header p{*/
+    /*color: #fff;*/
+    /*position: absolute;*/
+    /*right: 110px;*/
+    /*top: 100px;*/
+    /*height: 30px;*/
+    /*line-height: 30px;*/
+/*}*/
+/*header结束*/
+/*new-product开始*/
+#new-product{
+    margin-top: 56px;
+    height: 266px;
+}
+#new-product .sale{
+    height: 210px;
+    width: 360px;
+    background-repeat: no-repeat;
+    float: left;
+    margin-right: 30px;
+}
+#new-product .bg1{
+    background-image: url("../img/bg1.jpg");
+}
+#new-product .bg2{
+    background-image: url("../img/bg2.jpg");
+}
+#new-product .bg3{
+    background-image: url("../img/bg3.jpg");
+    margin-right: 0px;
+}
+#new-product .sale h4{
+    margin-top: 150px;
+    margin-left: 200px;
+    color: #ffffff;
+    font-size: 30px;
+}
+/*new-product结束*/
+/*product开始*/
 #product{
-    height: 2000px;
+    height: 1000px;
 }
 .info{
-    width: 440px;
-    height: 500px;
+    width: 340px;
+    height: 440px;
     float: left;
     border: 1px solid #ccc;
     margin-top: 30px;
@@ -18,6 +148,7 @@
     width:248px;
     height: 248px;
     border: 1px solid #ccc;
+    vertical-align: bottom;
 }
 
 .info .new{
@@ -26,10 +157,13 @@
     float: right;
 }
 .detail{
-    margin-left: 10px;
+    /*margin-left: 10px;*/
+    background: #5d5959;
+    width: 340px;
+    height: 202px;
 }
 .detail h3{
-    margin-top: 20px;
+    /*/!*margin-top: -4px;*!/  与上面bottom解决问题相同*/
 }
 .add{
     width: 150px;
@@ -46,3 +180,50 @@
     text-indent: 10px;
     outline: none;
 }
+/*product结束*/
+/*problem开始*/
+#problem{
+    height: 400px;
+    background: url("../img/banner2.jpg")
+                no-repeat center;
+}
+#problem .wrapper{
+    width: 1000px;
+}
+.problem-menu{
+    padding-left: 40px;
+    float: left;
+    margin-right: 40px;
+    margin-top: 100px;
+
+}
+.problem-menu li{
+    list-style: disc;
+    color: #fff;
+}
+.problem-menu li a{
+    color: #ffffff;
+}
+.problem-menu li a:hover{
+    text-decoration: underline;
+}
+.menu-bold{
+    font-weight: bolder;
+}
+/*problem结束*/
+/*footer开始*/
+/*#footer{*/
+    /*height: 82px;*/
+    /*background: #fa558f;*/
+    /*line-height: 82px;*/
+/*}*/
+/*#footer h3, #footer h4{*/
+    /*color: #ffffff;*/
+/*}*/
+/*#footer h3{*/
+    /*float: left;*/
+/*}*/
+/*#footer h4{*/
+    /*float: right;*/
+/*}*/
+/*footer结束*/

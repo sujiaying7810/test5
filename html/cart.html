@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/common.css"/>
+    <link rel="stylesheet" href="../css/cart.css"/>
+    <title></title>
+</head>
+<body>
+<div id="header">
+    <div class="wrapper">
+        <div id="main-header">
+            <div id="login " class="float">
+                <a href="login.html">登录</a>
+            </div>
+            <h1 class="float">我的小店</h1>
+            <div id="cart" class="cart">
+                <a href="cart.html">  <span>
+                    购物车： ￥
+                    <span id="total-price">0.00</span>
+                   ( <span id="total-count">0</span>件)
+                </span></a>
+            </div>
+            <p>清空购物车</p>
+        </div>
+        <ul id="nav">
+            <li class="selected"><a href="index.html">首页</a></li>
+            <li id="makeup">
+                <a href="">美妆商城</a>
+                <div id="submenu">
+                    <div class="wrapper">
+                        <ul class="menu-part">
+                            <li class="menu-part">护肤</li>
+                            <li><a href="">洁面</a></li>
+                            <li><a href="">化妆水</a></li>
+                            <li><a href="">乳液</a></li>
+                            <li><a href="">精华</a></li>
+                            <li><a href="">面膜</a></li>
+                            <li><a href="">面霜</a></li>
+                        </ul>
+                        <ul class="menu-part">
+                            <li class="menu-part">彩妆</li>
+                            <li><a href="">底妆</a></li>
+                            <li><a href="">眼妆</a></li>
+                            <li><a href="">唇妆</a></li>
+                            <li><a href="">卸妆</a></li>
+                            <li><a href="">美妆工具</a></li>
+                            <li><a href="">套装</a></li>
+                        </ul>
+                        <ul class="menu-part">
+                            <li class="menu-part">香水</li>
+                            <li><a href="">女士香水</a></li>
+                            <li><a href="">男士香水</a></li>
+                            <li><a href="">中性香水</a></li>
+                            <li><a href="">Q版香水</a></li>
+                            <li><a href="">香水套装</a></li>
+                            <li><a href="">精油</a></li>
+                        </ul>
+                        <ul class="menu-part">
+                            <li class="menu-part">男士护理</li>
+                            <li><a href="">面部护理</a></li>
+                            <li><a href="">身体护理</a></li>
+                            <li><a href="">护理套装</a></li>
+                            <li><a href="">洁面</a></li>
+                            <li><a href="">爽肤水</a></li>
+                            <li><a href="">男士洗护</a></li>
+                        </ul>
+                        <ul class="menu-part">
+                            <li class="menu-part">个人护理</li>
+                            <li><a href="">秀发护理</a></li>
+                            <li><a href="">身体护理</a></li>
+                            <li><a href="">纤体</a></li>
+                            <li><a href="">手足护理</a></li>
+                            <li><a href="">卫生巾</a></li>
+                            <li><a href="">口腔护理</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </li>
+            <li><a href="special-sale.html">特卖专场</a></li>
+            <li><a href="single.html">新品上市</a></li>
+            <li><a href="product.html">潮人推荐</a></li>
+            <li><a href="">进口免税店</a></li>
+        </ul>
+    </div>
+</div>
+
+<div id="cart-container">
+    <div class="wrapper">
+        <div id="cart-mine" class="float">
+            <h2>我的购物车 (2)</h2>
+            <div class="cart-detail">
+                <img src="../img/pic-2.jpg" alt="" class="cosmetic">
+                <img src="img/close.png" alt="" class="close">
+                <div class="cart-info">
+                    <h4>科颜氏高保湿精华爽肤水250ml</h4>
+                    <div class="price">
+                        <span class="on-sale">价格：¥160.00</span>
+                        数量： <input type="number" value="1">
+                    </div>
+                    <div class="time">
+                        <span>优惠: ¥10.00</span>
+                        <span class="arrive">预计3-5天送达</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="cart-detail">
+                <img src="../img/pic-1.jpg" alt="" class="cosmetic">
+                <img src="img/close.png" alt="" class="close">
+                <div class="cart-info">
+                    <h4>兰蔻(Lancome)清滢柔肤水</h4>
+                    <div class="price">
+                        <span class="on-sale">价格：¥210.00</span>
+                        数量： <input type="number" value="1">
+                    </div>
+                    <div class="time">
+                        <span>优惠: ¥10.00</span>
+                        <span class="arrive">预计3-5天送达</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div id="cart-price" class="float">
+            <button class="btn continue">继续购物</button>
+            <p class="description">价格详述</p>
+            <div class="total">
+                <span class="gap">总计</span><span>350.00</span><br>
+                <span class="gap">优惠</span><span>---</span><br>
+                <span class="gap">运费</span><span>10.00</span><br>
+                <div>
+                    <span class="gap sum">总计</span><span class="sum">360.00</span>
+                </div>
+            </div>
+            <button class="btn submit">提交订单</button>
+        </div>
+    </div>
+</div>
+<div id="footer">
+    <div class="wrapper">
+        <h3>我的小店</h3>
+        <h4>Copyright © 2017.我的小店</h4>
+    </div>
+</div>
+</body>
+</html>
