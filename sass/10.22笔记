@@ -1,0 +1,12 @@
+首先进入当前文件夹，然后cmd
+命令：sass scss/style.scss:css/instyle.css
+监听（自动编译命令）：sass --watch scss:css
+取消监听：Ctrl+c
+css输出格式:sass --watch scss:css --style expanded
+            nested嵌套
+            compact紧凑
+            expanded扩展 （平时风格）
+            compressed压缩(上线)
+变量和嵌套
+继承
+在base中写公共语句，然后将base重命名为_base，然后@import"base";

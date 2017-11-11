@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            height: 2000px;
+        }
+        #gohead{
+            height: 50px;
+            width: 70px;
+            background: #fa558f;
+            text-align: center;
+            line-height: 50px;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+云朵果果
+<div id="gohead">
+   回到顶部
+</div>
+<script>
+    var gohead=document.getElementById("gohead");
+    gohead.onclick=function(){
+        var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+        var timer=setInterval(function(){
+            window.scrollTo(0,scrollTop-=10);
+            if(scrollTop<0) {
+                clearInterval(timer);
+            }
+        },30);
+    };
+</script>
+</body>
+</html>

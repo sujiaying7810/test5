@@ -1,0 +1,38 @@
+$aa:#fff;
+$test:".test";
+$font:'font';
+#{$test+ 1}{
+  color: #000000;
+  #{$font+ "-size"}{
+    color: #008CD7;
+  }
+}
+body{
+  color:$aa;
+  height: 800px;
+  font-size: 12px;
+  margin: 29px;
+  padding:{
+    left:10px;
+    right:5px;
+  }
+}
+ul{
+  background-color:$aa;
+  li{
+    color: #008CD7;
+    a{
+      font:20px;
+      &:hover{
+        font:30px;
+      }
+      &::after{
+        content:'';
+      }
+      &-test{
+
+      }
+    }
+  }
+
+}

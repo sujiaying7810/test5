@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>放大镜</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #small img{
+            width: 400px;
+            height: 400px;
+        }
+        #big img{
+            width: 800px;
+            height: 800px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #small,#big{
+            float: left;
+        }
+        #drag{
+            width: 200px;
+            height: 200px;
+            background: #888888;
+            opacity: .5;
+            filter:alpha(opacity=50) ;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+        #small{
+            position: relative;
+            width: 400px;
+            height: 400px;
+        }
+        #big{
+            display: none;
+            width: 400px;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+        }
+
+    </style>
+</head>
+<body>
+     <div id="small">
+         <img src="../../img/null1ad8f3cfe894e9dc.jpg" alt=""/>
+         <div id="drag"></div>
+     </div>
+     <div id="big">
+         <img src="../../img/null1ad8f3cfe894e9dc.jpg" alt="" id="big-pic"/>
+     </div>
+     <script>
+         (function(){
+             var oSmall=document.getElementById("small");
+             var oBig=document.getElementById("big");
+             var oDrag=document.getElementById("drag");
+             var oBigPic=document.getElementById("big-pic");
+             oSmall.onmouseover =function(){
+                 oBig.style.display="block";
+                 oDrag.style.display="block";
+             };
+             oSmall.onmouseout=function(){
+                 oBig.style.display="none";
+                 oDrag.style.display="none";
+             };
+             oSmall.onmousemove=function(e){
+                 e = e||window.event;
+                 var left=e.clientX-oDrag.offsetWidth/2;
+                 var top=e.clientY-oDrag.offsetHeight/2;
+                 if(left<0){
+                     left=0;
+                 }
+                 if(top<0){
+                     top=0;
+                 }
+                 var xMax=oSmall.offsetWidth-oDrag.offsetWidth;
+                 if(left>xMax){
+                     left =xMax;
+                 }
+                 var yMax=oSmall.offsetHeight-oDrag.offsetHeight;
+                 if(top>yMax){
+                     top=yMax;
+                 }
+                 oDrag.style.left= left+"px";
+                 oDrag.style.top= top+"px";
+                 var fScaleX = left / xMax;
+                 var fScaleY = top / yMax;
+
+                 oBigPic.style.top = -fScaleY * (oBigPic.offsetHeight - oBig.offsetHeight) + "px";
+                 oBigPic.style.left = -fScaleX * (oBigPic.offsetWidth - oBig.offsetWidth) + "px";
+             };
+         })();
+     </script>
+</body>
+</html>

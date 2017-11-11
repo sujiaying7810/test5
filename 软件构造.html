@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>单词分类</title>
+    <style>
+        span{
+            display: inline-block;
+            height: 20px;
+        }
+        #box{
+
+            margin-top:20px;
+        }
+        #result {
+            width: 400px;
+            height: 470px;
+            border:1px solid ;
+        }
+        button{
+            display: inline-block;
+            margin-left: 220px;
+        }
+        #msg {
+            display: block;
+
+        }
+        body{
+            display: -webkit-box;
+        }
+        #right {
+            /*background: #000;*/
+            height: 600px;
+            /*flex-grow: 1;*/
+            -webkit-box-flex: 1;
+            width: 0;
+        }
+        #left{
+            /*background: #0000ff;*/
+            height: 600px;
+            -webkit-box-flex: 1;
+            width: 0;
+            /*flex-grow: 1;*/
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="left">
+    <input type="file" id="file"  />
+    <input type="button"  onclick="readText()"  value="File Button" >
+    <br/>
+    <span>写代码：</span>
+    <button id="button">解析</button>
+    <textarea id="msg" rows="30" cols="50" class="select" ></textarea>
+
+</div>
+<div id="right">
+    <div id="box">
+        <span>解析结果:</span>
+        <div id="result"></div>
+    </div>
+</div>
+
+
+<script>
+    //    var oMsg = document.getElementById ("msg");
+    var file=document.getElementById("file");
+    var oMsg = document.getElementById ("msg");
+    var oResult = document.getElementById ("result");
+    var oButton = document.getElementById ("button");
+    var keyWords = ["auto", "short", "int", "long", "float",
+        "double", "char", "struct", "union", "enum", "typedef", "const",
+        "unsigned", "signed", "extern", "register", "static", "volatile",
+        "void", "if", "else", "switch", "case", "for", "do", "while",
+        "goto", "continue", "break", "default", "sizeof", "return", "main",
+        "bool" ];
+    var yunsuanFu = [ "+", "-", "*", "/", "<", ">", "=", "&", "|", "%"];
+    var jieFu = [ ",", ";", "{", "}", "(", ")" ];
+    var  yunsuanFu1 = ["++", "--", ">=", "<=", "==", "||", "&&", "!=" ];
+    var item ="" ;
+    var temp ="";
+    window.onload =function () {
+        if(typeof(FileReader)=="undefined") {
+            alert("你的浏览器不支持文件读取"); document.write(""); }
+        else {
+            alert("你的浏览器支持文件读取"); }
+    };
+    function readText() {
+        var file=document.getElementById("file").files[0];
+        var reader=new FileReader();
+        reader.readAsText(file);
+        reader.onload=function(data ) {
+            var oMsg = document.getElementById ("msg");
+            //noinspection JSValidateTypes
+            oMsg.innerHTML=this.result; }
+    }
+
+
+
+    function  isyunsuanFu_Chuli(a) {
+        var isyunsuanFu = false;
+        for (var i = 0; i < yunsuanFu.length; i++) {
+
+            if (a == yunsuanFu[i]) {
+                isyunsuanFu = true;
+                return isyunsuanFu;
+            }
+        }
+
+        return isyunsuanFu;
+    }
+
+    function isyunsuanFu1_Chuli(a) {
+        var isyunsuanFu1 = false;
+        for (var i = 0; i < yunsuanFu1.length; i++) {
+            if (a == yunsuanFu1[i]) {
+                isyunsuanFu1 = true;
+                return isyunsuanFu1;
+            }
+        }
+        return isyunsuanFu1;
+    }
+
+    function isJieFu_Chuli(a) {
+        var isjieFu = false;
+        for (var i = 0; i < jieFu.length; i++) {
+            if (a == jieFu[i]) {
+                isjieFu = true;
+                return isjieFu;
+
+            }
+        }
+        return isjieFu;
+    }
+
+    function isKeyFu_Chuli(a) {
+//        System.out.println(a);
+        var iskeyFu = false;
+        for (var i = 0; i < keyWords.length; i++) {
+            if (a == keyWords[i]) {
+                iskeyFu = true;
+                return iskeyFu;
+            }
+        }
+        return iskeyFu;
+    }
+
+    function isNumeric(str) {
+        var flag = 0;
+
+        for(var i=0; i<str.length; i++) {
+//遇到e
+            if (str.charAt(i) == 'e') {
+
+                if(flag == 0 || flag == 1 || flag == 3 ) {
+                    flag = 4;
+                }
+                else{
+                    flag = -1;
+                }
+            }
+
+
+//遇到运算符+-
+            if( (str.charAt(i) == '+' || str.charAt(i) == '-')){
+                if(flag == 4) {
+                    flag = 5;
+                }
+                else{
+                    flag = -1;
+                }
+
+            }
+
+//遇到.
+            if (str.charAt(i) == '.') {
+
+                if(flag == 1 || flag == 0) {
+                    flag = 2;
+                }
+                else{
+                    flag = -1;
+                }
+
+
+            }
+//遇到数字
+            if(str.charAt(i) >= '0' &&  str.charAt(i) <= '9'){
+
+                if(flag == 0 || flag == 2 || flag == 5 ){
+                    flag++;
+                }
+                else if(flag == 4){
+                    flag = 6;
+                }
+            }
+
+
+        }
+        if(flag == 1 || flag == 3 || flag == 6){
+            return true;
+        }
+        else{
+            return false;
+        }
+
+//        return false;
+    }
+
+
+    function chuli(input) {
+
+        var isElect = false;
+        var index = 0;
+        while (index < input.length) {
+            item = input.charAt(index);
+            if (item == "\n" || item == " ") {
+                isElect = true;
+                PanDuan();
+            }
+
+            if (this.isJieFu_Chuli(item)) {
+                isElect = true;
+                PanDuan();
+                oResult.innerHTML += ("(" + 4 + "," + item + ")" + "<br>");
+            }
+            if (this.isyunsuanFu_Chuli(item)) {
+                if (input.charAt(index - 1) == 'e') {
+                    isElect = false;
+                }
+                else {
+
+                    isElect = true;
+                    var a = item;
+                    var b = "";
+                    PanDuan();
+                    try {
+                        index++;
+                        b = input.charAt(index);
+                        if (this.isyunsuanFu1_Chuli(a + b)) {
+
+                            oResult.innerHTML += ("(" + 3 + "," + a + b + ")" + "<br>");
+
+                            temp = "";
+                        } else {
+                            index--;
+                            oResult.innerHTML += ("(" + 3 + "," + item + ")" + "<br>");
+
+                            temp = "";
+                        }
+
+                    } catch (err) {
+                        oResult.innerHTML += ("(" + 3 + "," + item + ")" + "<br>");
+                        temp = "";
+
+                    }
+                }
+            }
+            if (isElect) {
+                isElect = false;
+            }
+            else {
+                temp = temp + item;
+            }
+            index++;
+            if (index == input.length) {
+                PanDuan();
+            }
+        }
+//        System.out.println("end");
+    }
+
+    /**
+     * @return {boolean}
+     * @return {boolean}
+     */
+    function PanDuanBianShiFu() {
+
+        if (isNumeric(temp.charAt(0))) {
+            oResult.innerHTML += ("(" + "非法标识符" + "," + temp + ")" + "<br>");
+            return  false;
+        }
+
+        else if (('a' <= temp.charAt(0) && temp.charAt(0) <= 'z')) {
+
+        } else if (('A' <= temp.charAt(0) && temp.charAt(0) <= 'Z')) {
+        } else if (temp.charAt(0) =="_") {
+        } else {
+            oResult.innerHTML += ("(" + "非法标识符" + "," + temp + ")" + "<br>");
+            return false;
+        }
+        var i = 1;
+        while (i < temp.length) {
+            if (('0' <= temp.charAt(i) && temp.charAt(i) <= '9')) {
+
+            }
+
+            else if (('a' <= temp.charAt(i) && temp.charAt(i) <= 'z')) {
+
+            } else if (('A' <= temp.charAt(i) && temp.charAt(i) <= 'Z')) {
+            } else if (temp.charAt(i) == "_") {
+            } else {
+                oResult.innerHTML += ("(" + "非法标识符" + "," + temp + ")" + "<br>");
+                return false;
+            }
+            i++;
+        }
+        return true;
+    }
+
+    function PanDuan() {
+        if (temp != "") {
+
+            if (this.isKeyFu_Chuli(temp)) {
+                oResult.innerHTML += ("(" + 1 + "," + temp + ")" + "<br>");
+
+                temp = "";
+            } else if (isNumeric(temp)) {
+
+                oResult.innerHTML += ("(" + 5 + "," + temp + ")" + "<br>");
+
+                temp = "";
+            } else if (temp == " ") {
+
+                temp = "";
+            } else if (temp == "\n") {
+
+                temp = "";
+            } else {
+                if (PanDuanBianShiFu()) {
+                    oResult.innerHTML += ("(" + 2 + "," + temp + ")" + "<br>");
+                }
+
+                temp = "";
+            }
+
+        }
+    }
+
+
+
+
+    oButton.onclick = function() {
+
+        oResult.innerHTML = "";
+        var str1 = oMsg.value.toString();
+        chuli(str1);
+    };
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--<style>-->
+        <!--.focus{-->
+            <!--background: red;-->
+        <!--}-->
+    <!--</style>-->
+</head>
+<body>
+<form action="">
+   名称： <input type="text" id="name"/><br/>
+   密码： <input type="password" id="mima"/><br/>
+   详细信息：<input type="text" id="information"/>
+</form>
+<script src="../jquery-1.12.4.js"></script>
+<script>
+//    $(function(){
+//        $("input").on( "click",function(){//$("input, textarea")
+//            $(this).addClass("focus");
+//            //this.className = "focus";
+//        }).blur(function(){
+//            $(this).removeClass("focus");
+//        });
+//    })
+    $(function () {
+       $("#name").on("click",function(){
+           $("#name").css("background","#000");
+       });
+        $("#name").on("mouseleave",function(){
+            $("#name").remove();
+        });
+//      $("mima").on("click",function(){
+//           $("mima").css("background","#000");
+//      });
+//       $("information").on("click",function(){
+//           $("#information").css("backgrond","#000");
+//       });
+        });
+</script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>做可爱的好孩子轮播图</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        li{
+            list-style: none;
+        }
+        #pic img{
+            display: none;
+        }
+        #pic .selected{
+            display: block;
+        }
+        #container{
+            width: 547px;
+            height: 400px;
+            position: relative;
+            margin: 100px auto;
+        }
+        #num{
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+        #num li ,#lr span{
+            background: #888888;
+            color: #ffffff;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            float: left;
+            cursor: pointer;
+            margin-right: 2px;
+
+        }
+        #num .selected{
+            background: #ef8743;
+        }
+
+        #lr {
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+        }
+        #hui{
+            width: 530px;
+            height: 400px;
+        }
+
+    </style>
+
+</head>
+<body>
+<div id="container">
+     <div id="pic">
+         <img src="../../img/null6e99da1668855ef5.jpg" alt="" class="selected">
+         <img src="../../img/null62c281fad234f0c2.jpg" alt="">
+         <img src="../../img/null4274ee76ccabb0e7.jpg" alt=""/>
+         <img src="../../img/null-6f1579ffe57abe0e.jpg" alt=""/>
+         <img src="../../img/nulle8dbb0fa13c061a.jpg" alt=""/>
+         <img src="../../img/nulla95129d57df2f27.jpg" alt=""/>
+         <img src="../../img/null1ad8f3cfe894e9dc.jpg" alt=""id="hui" />
+     </div>
+    <ul id="num">
+        <li class="selected" >1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+    </ul>
+    <div id="lr">
+        <span id="lt">&lt</span>
+        <span id="gt">&gt</span>
+    </div>
+</div>
+<script>
+    var oNum=document.getElementById("num");
+    var aLi =document.getElementsByTagName("li");
+    var oPic=document.getElementById("pic");
+    var aImg=document.getElementsByTagName("img");
+    var oLt =document.getElementById("lt");
+    var oGt =document.getElementById("gt");
+    var oContainer=document.getElementById("container");
+    var nowIndex=0;
+    var timer;
+        for(var i=0;i<aLi.length;i++){
+            aLi[i].index=i;
+            aLi[i].onmouseover=function(){
+                for(var i=0;i<aLi.length;i++){
+                    aLi[i].className="";
+                    aImg[i].className="";
+                }
+                this.className="selected";
+                aImg[this.index].className="selected";
+                nowIndex=this.index;
+            };
+        }
+       oLt.onclick=oGt.onclick=function(){
+           if(this==oLt){
+               nowIndex--;
+               if(nowIndex==-1){
+                   nowIndex = aLi.length-1;
+               }
+           }else{
+               nowIndex++;
+               if(nowIndex==aLi.length){
+                   nowIndex = 0;
+               }
+           }
+           for(var i=0;i<aLi.length;i++){
+               aLi[i].className="";
+               aImg[i].className="";
+           }
+           aLi[nowIndex].className="selected";
+           aImg[nowIndex].className="selected";
+       };
+      oContainer.onmouseout=function(){
+         timer= setInterval(function(){
+               oGt.onclick();
+          },1000);
+      };
+      oContainer.onmouseover=function(){
+        clearInterval(timer);
+    };
+    timer=setInterval(function(){
+        oGt.onclick();
+    },1000);
+</script>
+</body>
+</html>

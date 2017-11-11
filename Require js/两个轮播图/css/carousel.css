@@ -1,0 +1,42 @@
+.carousel-pic img{
+    display: none;
+}
+.carousel-pic .selected{
+    display: block;
+}
+#container{
+    width: 547px;
+    height: 400px;
+    position: relative;
+    /*margin: 100px auto;*/
+}
+.carousel-num{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+.carousel-num li ,.carousel-lr span{
+    background: #888888;
+    color: #ffffff;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    float: left;
+    cursor: pointer;
+    margin-right: 2px;
+
+}
+.carousel-num .selected{
+    background: #ef8743;
+}
+
+.carousel-lr {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
+.carousel-hui{
+    width: 530px;
+    height: 400px;
+}

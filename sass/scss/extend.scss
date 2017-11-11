@@ -1,0 +1,13 @@
+@import "base";
+div{
+  color: #008CD7;
+  font-size: 30px;
+  a{
+    text-decoration:none;
+  }
+}
+p{
+  @extend  div;
+  background-color: #37C7D4;
+}
+$flag:true;

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        #container{
+            margin-top: 200px;
+            margin-left: 500px;
+
+        }
+        #que{
+            width: 150px;
+            height: 100px;
+            background: #fa558f;
+            color: #37C7D4;
+            font-size: large;
+            text-align: center;
+            line-height: 100px;
+            transition: all 2s ease;
+
+        }
+        #container:hover #que{
+            width: 400px;
+            height: 300px;
+            text-align: center;
+            line-height: 300px;
+        }
+        /*#que:hover{*/
+            /*width: 400px;*/
+            /*height: 300px;*/
+            /*text-align: center;*/
+            /*line-height: 300px;*/
+        /*}*/
+        #yes{
+            margin-left: 60px;
+            transition: all 2s ease;
+        }
+        /*#yes:hover{*/
+            /*width: 100px;*/
+            /*height: 20px;*/
+        /*}*/
+        #container:hover #yes{
+            width: 100px;
+            height: 20px;
+            margin-left: 150px;
+        }
+        #img{
+            display: none;
+        }
+         img{
+             width: 300px;
+             height: 300px;
+             border: 1px solid;
+             border-radius: 50%;
+             transition: all 2s ease;
+             margin-left: 200px;
+             margin-top: -300px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="que">Do you love me ?</div>
+    <button id="yes">Yes</button>
+</div>
+<div id="img">
+    <img src="null1ad8f3cfe894e9dc.jpg" alt=""/>
+</div>
+<script>
+    var oYes=document.getElementById("yes");
+    var oContainer=document.getElementById("container");
+    oYes.onclick = function () {
+        img.style.display="block";
+    };
+    oContainer.onmouseout=function(){
+        img.style.display="none";
+    };
+
+</script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>小海豹2</title>
+    <style>
+        #header,#nav,#footer{
+            width: 960px;
+            height: 100px;
+            background:#37C7D4;
+            color: #fa558f;
+            text-align: center;
+            line-height: 100px;
+            margin: 20px auto;
+        }
+        #banner{
+            width: 960px;
+            height: 540px;
+            margin: 0 auto;
+            background: url("img/01.jpg") no-repeat;
+            background-size: cover;
+
+        }
+        img{
+            width: 960px;
+            display: block;
+        }
+        #content{
+            width: 960px;
+            height: 300px;
+            margin: 0 auto;
+        }
+        #left{
+            width: 600px;
+            height: 300px;
+            background:green;
+            float: left;
+            display: table;
+
+        }
+        #right{
+            width: 330px;
+            height: 300px;
+            background: yellow;
+            float: right;
+            display: table;
+        }
+        p{
+            text-align: center;
+            display: table-cell;
+            vertical-align:middle;
+        }
+        @media (max-width:980px) {
+            #header,#nav,#footer{
+                width: 100%;
+            }
+            #banner{
+                width: 100%;
+                height: 0;
+                background-image: url("img/01_s_2x.jpg");
+                padding-top: 50%;
+            }
+
+            #content{
+                width: 100%;
+            }
+            #left{
+                width: 57%;
+            }
+            #right{
+
+                width: 40%;
+            }
+        }
+        @media (max-width: 480px) {
+            #banner{
+                background-image: url("img/01_s.jpg");
+            }
+            #content{
+                height: 600px;
+            }
+            #left{
+                float: none;
+                width:100%;
+            }
+            #right{
+                float: none;
+                width:100%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="header">页头</div>
+<div id="nav">导航</div>
+<div id="banner"></div>
+<div id="content">
+    <div id="left"><p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sem erat, egestas quis luctus ut, rhoncus vitae risus. Integer venenatis libero sit amet sapien dictum, quis bibendum mi volutpat. Cras pretium quam quis magna facilisis, eget feugiat nisi lacinia.
+    </p>
+    </div>
+    <div id="right"><p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sem erat, egestas quis luctus ut, rhoncus vitae risus. Integer venenatis libero sit amet sapien dictum, quis bibendum mi volutpat. Cras pretium quam quis magna facilisis, eget feugiat nisi lacinia.
+    </p>
+    </div>
+</div>
+<div id="footer">页脚</div>
+</body>
+</html>
