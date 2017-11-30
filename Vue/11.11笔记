@@ -1,6 +1,10 @@
-template:'<div><h1>hhhhh</h1><p>pppp</p></div>'
+Vue组件
+template:'<div><h1>hhhhh</h1><p>pppp</p></div>
 //最外层只能有唯一的标签
 template:'<h1>{{msg}}</h1>'
 props:['msg']
 slot用法
 构造函数生命周期，弄清什么时候调用
+vue-router是Vue.js的官方插件，用于单页面的构造。路径切换
+路由传参很重要
+推荐手册网

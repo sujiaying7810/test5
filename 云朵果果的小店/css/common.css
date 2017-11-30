@@ -22,7 +22,7 @@ li{
 }
 /*header¿ªÊ¼*/
 #header{
-    background: url("../img/banner33.jpg") no-repeat center;
+    background: url(../img/banner33.jpg) no-repeat center;
     height: 250px;
 }
 #login a:hover{
