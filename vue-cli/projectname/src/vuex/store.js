@@ -1,15 +1,12 @@
-/**
- * Created by dell1 on 2017/11/26.
- */
 import Vue from 'vue'
 import Vuex from 'vuex'
 
 Vue.use(Vuex);
 
-
 const state = {
-  count: 2,
-  count1:3
+  count    : 2,
+  count1   : 3,
+  photoData: []
 }
 
 const mutations = {
@@ -18,11 +15,15 @@ const mutations = {
   },
   reduce(state){
     state.count--;
+  },
+  setPhotoData(state,data){
+    state.photoData = data;
   }
 }
-const getters={
+
+const getters = {
   count2(state){
-    return  state.count+100;
+    return state.count+100;
   }
 }
 const actions={
@@ -31,8 +32,13 @@ const actions={
   },
   reduceAction({commit}){
     commit('reduce');
+  },
+  setPhotoData({commit},data){
+    commit('setPhotoData',data);
   }
 }
+
+
 export default new Vuex.Store({
   state,
   mutations,
