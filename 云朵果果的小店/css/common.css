@@ -22,7 +22,7 @@ li{
 }
 /*header开始*/
 #header{
-    background: url(../img/banner33.jpg) no-repeat center;
+    background: url(../../img/banner33.jpg) no-repeat center;
     height: 250px;
 }
 #login a:hover{
@@ -38,7 +38,7 @@ li{
 #main-header #cart{
     width: 280px;
     height: 50px;
-    background: #000 url(../img/cart.png) 230px center no-repeat;
+    background: #000 url(../../img/cart.png) 230px center no-repeat;
     opacity: .5;/* 取值范围0~1 */
     filter: alpha(opacity=50);/* ie下  取值范围0~100 */
     color: #fff;
