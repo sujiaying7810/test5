@@ -1,29 +1,22 @@
+
 <!DOCTYPE html>
 <html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
+<head>
+    <script src="../jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#hide").click(function(){
+                $("p").hide();
+            });
+            $("#show").click(function(){
+                $("p").show();
+            });
+        });
+    </script>
 </head>
 <body>
-<script src="../jquery-1.12.4.js"></script>
-<script>
-    $("td").toggle(
-
-            function () {
-
-                $(this).addClass("selected");
-
-            },
-
-            function () {
-
-                $(this).removeClass("selected");
-
-            }
-
-    );
-
-
-</script>
+<p id="p1">如果点击“隐藏”按钮，我就会消失。</p>
+<button id="hide" type="button">隐藏</button>
+<button id="show" type="button">显示</button>
 </body>
 </html>
